@@ -291,3 +291,10 @@ body {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
+
+.brand-title {
+    font-size: 42px;
+    color: #ff1493;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
