@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Gallery - Marvelous Beauty Parlour</title>
     <link rel="icon" href="favicon.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
+
 <body>
 
 <header class="header">
@@ -17,7 +18,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="visit.html">Visit Us</a></li>
             </ul>
@@ -25,20 +26,189 @@
     </div>
 </header>
 
-<section class="services">
+<section class="gallery-section">
     <div class="container">
         <h2>Our Work</h2>
-        <div class="service-grid">
-            <div class="card">Bridal Look 1</div>
-            <div class="card">Hair Styling 2</div>
-            <div class="card">Makeup 3</div>
+
+        <!-- Filter Buttons -->
+        <div class="gallery-buttons">
+            <button onclick="filterGallery('bridal')">Bridal Look</button>
+            <button onclick="filterGallery('hair')">Hair Styling</button>
+            <button onclick="filterGallery('makeup')">Makeup</button>
+            <button onclick="filterGallery('all')">Show All</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+
+            <!-- Bridal -->
+            <div class="gallery-item bridal">
+                <img src="images/bridal1.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal2.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal3.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal4.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal5.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal6.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal7.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal8.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal9.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item bridal">
+                <img src="images/bridal10.jpeg" onclick="openLightbox(this)">
+            </div>
+
+            <!-- Hair -->
+            <div class="gallery-item hair">
+                <img src="images/hair_style_1.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_2.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_3.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_4.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_5.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_6.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_7.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_8.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_9.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item hair">
+                <img src="images/hair_style_10.jpeg" onclick="openLightbox(this)">
+            </div>
+
+            <!-- Makeup -->
+            <div class="gallery-item makeup">
+                <img src="images/makeup1.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup2.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup3.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup4.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup5.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup6.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup7.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup8.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup9.jpeg" onclick="openLightbox(this)">
+            </div>
+            <div class="gallery-item makeup">
+                <img src="images/makeup10.jpeg" onclick="openLightbox(this)">
+            </div>
+
         </div>
     </div>
 </section>
 
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+    <img id="lightbox-img">
+    <button class="next" onclick="changeImage(1)">&#10095;</button>
+</div>
+
 <footer class="footer">
-    <p>© 2026 Marvelous Beauty Parlour</p>
+    <p>© 2026 Marvelous Beauty Parlour. All rights reserved.</p>
 </footer>
+
+<script>
+let currentIndex = 0;
+let filteredImages = [];
+
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.gallery-buttons button');
+
+    // Highlight active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    // Filter images
+    items.forEach(item => {
+        if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+function openLightbox(imgElement) {
+    const visibleImages = document.querySelectorAll('.gallery-item img');
+    filteredImages = Array.from(visibleImages).filter(img =>
+        img.parentElement.style.display !== "none"
+    );
+
+    currentIndex = filteredImages.indexOf(imgElement);
+
+    document.getElementById("lightbox").style.display = "block";
+    document.getElementById("lightbox-img").src = imgElement.src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+function changeImage(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = filteredImages.length - 1;
+    }
+
+    if (currentIndex >= filteredImages.length) {
+        currentIndex = 0;
+    }
+
+    document.getElementById("lightbox-img").src = filteredImages[currentIndex].src;
+}
+window.onload = function() {
+    filterGallery('all');
+    document.querySelector('.gallery-buttons button:last-child').classList.add('active');
+};
+</script>
 
 </body>
 </html>
